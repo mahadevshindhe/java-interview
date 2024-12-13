@@ -97,3 +97,307 @@ The thread-safety of hashCode() depends on the immutability of the fields used i
 ##### Given a class with array fields, how would you implement hashCode()?
 For a class with array fields, you would need to consider the elements of the array in the hash code calculation. You could use Arrays.hashCode(arrayField) for each array field and combine these results following the standard hash code pattern.
 
+### coding problems
+##### Implement a hashCode() method for a Point class with x and y integer coordinates. 
+Code:
+```
+public class Point {
+    private int x;
+    private int y;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return 31 * x + y;
+    }
+}
+```
+##### Write a hashCode() method for a Person class with firstName and lastName fields.
+Code:
+```
+public class Person {
+    private String firstName;
+    private String lastName;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName);
+    }
+}
+```
+##### How would you handle hashCode() for a Book class with a List<String> of authors?
+Code:
+```
+public class Book {
+    private String title;
+    private List<String> authors;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, authors);
+    }
+}
+```
+##### Create a hashCode() method for a Rectangle class that avoids collisions for rectangles with the same area but different dimensions.
+Code:
+```
+public class Rectangle {
+    private int width;
+    private int height;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(width, height);
+    }
+}
+```
+##### Implement hashCode() for a User class that includes a unique id field.
+Code:
+```
+public class User {
+    private String id;
+    private String name;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
+}
+```
+##### How would you write a hashCode() method for a Vehicle class with make, model, and year fields?
+Code:
+```
+public class Vehicle {
+    private String make;
+    private String model;
+    private int year;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(make, model, year);
+    }
+}
+```
+##### Design a hashCode() method for a Circle class that uses the radius field.
+Code:
+```
+public class Circle {
+    private double radius;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Double.hashCode(radius);
+    }
+}
+```
+##### Write a hashCode() method for an Employee class that combines employeeId and department.
+Code:
+
+```
+public class Employee {
+    private int employeeId;
+    private String department;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeId, department);
+    }
+}
+```
+##### How can you ensure that the hashCode() method for a Product class with a BigDecimal price field is consistent with equals()?
+Code:
+```
+public class Product {
+    private String name;
+    private BigDecimal price;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price.stripTrailingZeros());
+    }
+}
+```
+##### Implement hashCode() for a TreeNode class with value and children fields.
+Code:
+```
+public class TreeNode {
+    private Object value;
+    private List<TreeNode> children;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value, children);
+    }
+}
+```
+##### Create a hashCode() method for a Matrix class that accounts for a two-dimensional array of integers.
+Code:
+```
+public class Matrix {
+    private int[][] data;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Arrays.deepHashCode(data);
+    }
+}
+```
+##### Write a hashCode() method for a Graph class that includes a Set<Node> of nodes.
+Code:
+```
+public class Graph {
+    private Set<Node> nodes;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nodes);
+    }
+}
+```
+##### How would you implement hashCode() for a Color class with red, green, and blue integer fields?
+Code:
+```
+public class Color {
+    private int red;
+    private int green;
+    private int blue;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(red, green, blue);
+    }
+}
+```
+##### Design a hashCode() method for a Flight class that includes origin, destination, and flightNumber.
+Code:
+```
+public class Flight {
+    private String origin;
+    private String destination;
+    private String flightNumber;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(origin, destination, flightNumber);
+    }
+}
+```
+##### Implement hashCode() for a MusicTrack class with title, artist, and duration fields.
+
+Code:
+```
+public class MusicTrack {
+    private String title;
+    private String artist;
+    private int duration;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, artist, duration);
+    }
+}
+```
+##### Create a hashCode() method for a Pair generic class with first and second fields.
+Code:
+```
+public class Pair<F, S> {
+    private F first;
+    private S second;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second);
+    }
+}
+```
+##### Write a hashCode() method for a BankAccount class that includes accountNumber and balance.
+Code:
+```
+public class BankAccount {
+    private String accountNumber;
+    private BigDecimal balance;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(accountNumber, balance.stripTrailingZeros());
+    }
+}
+```
+##### How would you implement hashCode() for a TimeSlot class with startTime and endTime LocalTime fields?
+
+Code:
+```
+public class TimeSlot {
+    private LocalTime startTime;
+    private LocalTime endTime;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(startTime, endTime);
+    }
+}
+```
+##### Design a hashCode() method for a Tag class that uses a String name field.
+Code:
+```
+public class Tag {
+    private String name;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+}
+```
+##### Implement hashCode() for a Dimension class with width and height fields, ensuring a unique hash code for each unique dimension.
+Code:
+```
+public class Dimension {
+    private int width;
+    private int height;
+
+    // Constructor, getters, and setters
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(width, height);
+    }
+}
+```

@@ -18,26 +18,26 @@ The Object class enables polymorphism in Java. Since all classes extend Object, 
 **Top Interview Questions:**
 
 1. **equals() method:**
-How does the equals() method in the Object class work, and when would you override it?
-Answer: The equals() method in the Object class checks if two references point to the same object in memory. You would override it when you need to compare objects based on their internal state rather than their identity.
+- How does the equals() method in the Object class work, and when would you override it?
+- Answer: The equals() method in the Object class checks if two references point to the same object in memory. You would override it when you need to compare objects based on their internal state rather than their identity.
 2. **equals() and hashCode() contract:**
- Can you explain the contract between equals() and hashCode() methods in Java?"
-Answer: If two objects are equal according to the equals() method, then calling the hashCode() method on each of the two objects must produce the same integer result. This contract is essential for the correct operation of collections that use hashing.
+- Can you explain the contract between equals() and hashCode() methods in Java?"
+- Answer: If two objects are equal according to the equals() method, then calling the hashCode() method on each of the two objects must produce the same integer result. This contract is essential for the correct operation of collections that use hashing.
 3. **toString() method:**
-What is the purpose of the toString() method, and why might you override it?"
-Answer: The toString() method provides a string representation of the object. You might override it to provide meaningful information about the object, which can be very useful for debugging and logging purposes.
+- What is the purpose of the toString() method, and why might you override it?"
+- Answer: The toString() method provides a string representation of the object. You might override it to provide meaningful information about the object, which can be very useful for debugging and logging purposes.
 4. **wait() and notify() methods:**
-Describe a scenario where you would use the wait() and notify() methods of the Object class.
-Answer: You would use these methods in a producer-consumer scenario where one thread is producing data and another is consuming it. The consumer thread would call wait() to wait for data to be produced, and the producer thread would call notify() to signal that data is available.
+- Describe a scenario where you would use the wait() and notify() methods of the Object class.
+- Answer: You would use these methods in a producer-consumer scenario where one thread is producing data and another is consuming it. The consumer thread would call wait() to wait for data to be produced, and the producer thread would call notify() to signal that data is available.
 5. **getClass() method vs instanceof:**
-How does the getClass() method differ from the instanceof keyword in Java?
-Answer: The getClass() method returns the exact runtime class of the object, while instanceof checks if the object is an instance of a specified class or its subclasses. instanceof also returns false if the object is null, whereas getClass() would cause a NullPointerException.
+- How does the getClass() method differ from the instanceof keyword in Java?
+- Answer: The getClass() method returns the exact runtime class of the object, while instanceof checks if the object is an instance of a specified class or its subclasses. instanceof also returns false if the object is null, whereas getClass() would cause a NullPointerException.
 6. **clone() method:**
-What is the clone() method, and what are the considerations for using it in a class?
-Answer: The clone() method creates a copy of the object. When using it, consider whether to perform a shallow or deep copy, and ensure that any mutable fields of the object are also cloned to avoid shared references.
+- What is the clone() method, and what are the considerations for using it in a class?
+- Answer: The clone() method creates a copy of the object. When using it, consider whether to perform a shallow or deep copy, and ensure that any mutable fields of the object are also cloned to avoid shared references.
 7. **Significance of the Object class:**
-Discuss the significance of the Object class in Java's object-oriented programming model.
-Answer: The Object class is significant because it provides a common structure and behavior for all objects in Java. It enables polymorphism, method overriding, and serves as a generic reference type. It also provides default implementations of fundamental methods that can be customized by subclasses.
+- Discuss the significance of the Object class in Java's object-oriented programming model.
+- Answer: The Object class is significant because it provides a common structure and behavior for all objects in Java. It enables polymorphism, method overriding, and serves as a generic reference type. It also provides default implementations of fundamental methods that can be customized by subclasses.
 
 ##### If two objects have the same hash code, does it mean they are equal?
 
